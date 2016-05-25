@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>info.smart-project</groupId>
+  <artifactId>x3d33</artifactId>
+  <version>0.0.1</version>
+  <packaging>jar</packaging>
+
+  <name>X3D Schema xmlbeans compiled schema</name>
+  <url>https://github.com/allixender/xmlbeans-schemas</url>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <connection>scm:git:https://github.com/allixender/xmlbeans-schemas.git</connection>
+    <developerConnection>scm:git:https://github.com/allixender/xmlbeans-schemas.git</developerConnection>
+    <url>https://github.com/allixender/xmlbeans-schemas</url>
+    <tag>HEAD</tag>
+  </scm>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>xmlbeans-maven-plugin</artifactId>
+        <version>2.3.3</version>
+        <executions>
+          <execution>
+            <id>main</id>
+            <goals>
+              <goal>xmlbeans</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <schemaDirectory>src/main/xsd</schemaDirectory>
+          <sourceSchemas>
+            <sourceSchema>x3d-3.3.xsd</sourceSchema>
+          </sourceSchemas>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.4.1</version>
+        <configuration>
+          <useReleaseProfile>false</useReleaseProfile>
+          <releaseProfiles>release</releaseProfiles>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.xmlbeans</groupId>
+      <artifactId>xmlbeans</artifactId>
+      <version>2.6.0</version>
+    </dependency>
+  </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>bintray-allixender-maven2</id>
+      <name>allixender-maven</name>
+      <url>https://api.bintray.com/maven/allixender/maven2/x3d33/;publish=1</url>
+    </repository>
+  </distributionManagement>
+</project>
