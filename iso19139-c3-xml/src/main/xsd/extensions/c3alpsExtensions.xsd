@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2013 sp1 (x64) (http://www.altova.com) by Lieferanten Buchhaltung (University of Salzburg) -->
+<xs:schema xmlns:c3alps="http://portal.c3alps.eu/namespace" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gml="http://www.opengis.net/gml" xmlns:srv="http://www.isotc211.org/2005/srv" targetNamespace="http://portal.c3alps.eu/namespace" elementFormDefault="qualified" version="1.4">
+	<xs:import namespace="http://www.isotc211.org/2005/gco" schemaLocation="../gco/gco.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gts" schemaLocation="../gts/gts.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/gmd" schemaLocation="../gmd/gmd.xsd"/>
+	<xs:import namespace="http://www.isotc211.org/2005/srv" schemaLocation="../srv/srv.xsd"/>
+	<xs:import namespace="http://www.opengis.net/gml" schemaLocation="../gml/gml.xsd"/>
+	<xs:annotation>
+		<xs:documentation>C3Alps-Schema Extension, based on MCP-Example (c) 2013 Z_GIS, Hubert Asamer, Richard Schoerghofer</xs:documentation>
+	</xs:annotation>
+	
+	<xs:element name="MD_DataIdentification" type="c3alps:MD_DataIdentification_Type" substitutionGroup="gmd:AbstractMD_Identification"/>
+	<xs:complexType name="MD_DataIdentification_Type">
+		<xs:annotation>
+			<xs:documentation>
+				Add C3-Elements
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="gmd:MD_DataIdentification_Type">
+				<xs:sequence minOccurs="0">
+				<xs:element name="c3project" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								
+								<xs:element name="c3projectStatus" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3projectFundingBody" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3projectBudgetInEuro" type="gco:Integer_PropertyType"/>
+								<xs:element name="c3projectCoordinator" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3projectCoordinatorCountry" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3projectLevelOfImplementation" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- new -->
+								<xs:element name="c3projectCountryResutlsProduced" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<!-- new -->
+								<xs:element name="c3projectNutsTwoCoveredResults" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3projectKnowledgeProducts" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3projectFormOfPublication" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="5"/>
+								<xs:element name="c3projectMainAdaptationOrImpactSector" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<!-- new -->
+								<xs:element name="c3projectOtherAdaptationSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3projectApproachWithRegardToSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="5"/>
+								<xs:element name="c3projectImpactsAdressed" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<!--<xs:element name="c3projectStakeholderInvolvement" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="5"/>-->
+								<xs:element name="c3projectMainTargetGroups" type="gco:CharacterString_PropertyType" minOccurs="0"  maxOccurs="unbounded"/>
+								<xs:element name="c3projectLevelOfTargetGroups" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="5"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3exposure" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3exposureTypeofProduct" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="1"/>
+								<xs:element name="c3exposureMainTargetGroups" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3exposureSRES" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exposureGCM" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exposureRCM" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exposureStatisticalDownScaling" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3exposureOtherMethodsClimateMod" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:sequence minOccurs="0" maxOccurs="unbounded">
+									<xs:element name="c3exposureTimeHorizonFrom" type="gco:Date_PropertyType"/>
+									<xs:element name="c3exposureTimeHorizonTo" type="gco:Date_PropertyType"/>
+								</xs:sequence>
+								<xs:element name="c3exposureModelAreaAssessed" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3exposureClimModelGridResolutionMeter" type="gco:Integer_PropertyType" minOccurs="0"/>
+								<xs:element name="c3exposureResultsBiasCorrected" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3exposureOutputParamsAvailable" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exposureUncertaintyRangesEstimated" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<!--<xs:element name="c3exposureEvaluationModelPerformance" type="gco:Boolean_PropertyType" minOccurs="0"/>-->
+								<xs:element name="c3exposureGradeofInnovation" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3impacts_vulnerabilities" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3impactsTypeOfProduct" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3impactsTypeofAssessment" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3impactsMainTargetGroups" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3impactsMainAdaptation" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3impactsOtherAdaptations" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3impactsMainClimateImpacts" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<!--<xs:element name="c3impactsAssessmentScale" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>-->
+								<xs:element name="c3impactsLevelOfResolution" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3impactsAssessmentMethods" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3impactsDataSources" type="gco:CharacterString_PropertyType"/>
+								<!--<xs:element name="c3impactsStakeholderInteractions" type="gco:CharacterString_PropertyType" minOccurs="0"/>-->
+								<!--<xs:element name="c3impactsTimeHorizon" type="gco:Date_PropertyType"/>-->
+								<xs:element name="c3impactsGeographicLocation" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3impactsUncertainties" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3ccap" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3ccapTypeOfPolicy" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3ccapPolicyLevel" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3ccapStatus" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3ccapLevelOfObligation" type="gco:CharacterString_PropertyType"/>
+								<!--named as main adaptation sector from now on the variable is still the old one-->
+								<xs:element name="c3ccapAdaptationsSectorsCovered" type="gco:CharacterString_PropertyType"/>
+								<!--also new after renaming the main sector he want other adaptations too-->
+								<xs:element name="c3ccapOtherSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3ccapRegardToSectors" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3ccapMainTargetGroups" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3ccapRealtionshipToMitigation" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3ccapImplementationOrientation" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<!--<xs:element name="c3ccapExAnteImpactAssessment" type="gco:Boolean_PropertyType"/>-->
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3adaptationOptions" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3adaptMainTargetGroups" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptMainLevelOfTargetGroups" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptMainAdaptationSector" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3adaptOtherAdaptationSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptLevelofImplementation" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptRegardToSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptReletionshipToMitigation" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3adaptMainLevelOfImplementation" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3adaptAdapationGoals" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptTypeOfMeasure" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptAdaptationCosts" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3adaptLevel2ImplementationPlanning" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptLevel2ImplementedAdaptationActivities" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3adaptLevel2ExAnteImpactAssessment" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3adaptLevel2GradeOfInnovation" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptLevel2SubLevelsOfMainAdaptationSector" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3adaptLevel2TimeHorizon" type="gco:Integer_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3adaptLevel2Transferability" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3tools" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3toolsTypeOfProduct" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsMainTargetGroupOfResults" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsMainLevelOfTargetGroups" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsRegardToSectors" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3toolsMainImpact" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3toolsSubLevelsOfMainImpact" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3toolsOtherImpacts" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsPurpose" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsReuseability" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="1"/>
+								<xs:element name="c3toolsGoalAssessment" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsGoalAdaptationManagement" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsGoalAdaptationGovernance" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsGoalStakeholderInteraction" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3toolsLevel2MethodsNeeded" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3toolsLevel2Transferability" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3toolsLevel2GradeOfInnovation" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3toolsLevel2Applicability" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3toolsLevel2ProvenTrack" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<!--<xs:element name="c3toolsLevel3TimeNeeded" type="gco:CharacterString_PropertyType" minOccurs="0"/>-->
+								<!--<xs:element name="c3toolsLevel3Costs" type="gco:CharacterString_PropertyType" minOccurs="0"/>-->
+								<!--<xs:element name="c3toolsLevel3InputData" type="gco:CharacterString_PropertyType" minOccurs="0"/>-->
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3examples" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3exampTypeOfProduct" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3exampMainAdaptationSector" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3exampOtherAdaptationSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exampMainClimateChangeImpacts" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exampMainTargetGroups" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exampMainImplementationLevel" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exampRegardToSectors" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3exampRelationshipToMitigation" type="gco:CharacterString_PropertyType" minOccurs="0"/>
+								<xs:element name="c3exampSpatialUnitOfImplementation" type="gco:CharacterString_PropertyType" maxOccurs="unbounded"/>
+								<!--<xs:element name="c3exampAdapationGoals" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>-->
+								<xs:element name="c3exampTypesOfMeasures" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<!--<xs:element name="c3exampLevel2Transferability" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>-->
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3adaptationcycle" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3adaptationcycleWhyAdaptCC" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcyclePlanforAdaptation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleHowEUCC" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleRiVuinEUsectandregions" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleOpportunities" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleAssessAdaptiveCapacity" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleDealwithUncertainties" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleAdaptationOptions" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleCaseStudies" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleDecideOptionsAdaptation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleCostsandBenefitsofAdaptation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleImplementation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3adaptationcycleMoniandEval" type="gco:Boolean_PropertyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="c3usefulness" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3usefulnessAcrossBordersandLevels" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessLessonsLearned" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessCapacityBuilding" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessStakeholder" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessFinacialIssues" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessPoliciesandGovernance" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessIntegratedSolutions" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessMaladaptation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessMunicipalities" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessTransferability" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessBanksorInsurances" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessPublicAdministration" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessSectoralVulnerabilities" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessPeopletoAction" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessAwarenessorPreparedness" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessHowTo" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessGeospatialInformation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessExistingInformation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessVisualisedInformation" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessCcCcaRiskCommunication" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessOverviewandisEasytoRead" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessSpecificAspectsorRegions" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessProvenRecord" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessResearchGaps" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessStateofKnowledge" type="gco:Boolean_PropertyType"/>
+								<xs:element name="c3usefulnessDifferentDisciplines" type="gco:Boolean_PropertyType"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<!--<xs:element name="c3caseStudies" minOccurs="0">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="c3caseLevelOfTerretory" type="gco:CharacterString_PropertyType"/>
+								<xs:element name="c3caseTypesOfInformationProduced" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3caseContentCategoryImpacts" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3caseContentCategoryAdaptation" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3caseContentCategoryAdaptationOptions" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+								<xs:element name="c3caseStakeholderInteractions" type="gco:CharacterString_PropertyType" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>-->
+				</xs:sequence>
+				<xs:attribute ref="gco:isoType" use="required" fixed="gmd:MD_DataIdentification"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
+	<xs:complexType name="MD_DataIdentification_PropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="c3alps:MD_DataIdentification"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gco:ObjectReference"/>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+	<!-- NOTE: for geonetwork to be able to determine which elements to add 
+     during editing it is MANDATORY to extend the MD_Metadata element
+     with a namespace representing the profile - geonetwork can then look at
+     the prefix of the root node when it tries to work out which elements
+     to substitute during schema parsing -->
+	<!-- ====================================================================== -->
+	<!-- Add revisionDate to gmd:MD_Metadata -->
+	<!-- ====================================================================== -->
+	<xs:complexType name="MD_Metadata_Type">
+		<xs:annotation>
+			<xs:documentation>
+Extends the metadata element to include revisionDate 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="gmd:MD_Metadata_Type">
+				<xs:sequence>
+					<xs:element name="revisionDate" type="gco:Date_PropertyType" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute ref="gco:isoType" use="required" fixed="gmd:MD_Metadata"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="MD_Metadata" type="c3alps:MD_Metadata_Type" substitutionGroup="gmd:MD_Metadata"/>
+	<xs:complexType name="MD_Metadata_PropertyType">
+		<xs:sequence minOccurs="0">
+			<xs:element ref="c3alps:MD_Metadata"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="gco:ObjectReference"/>
+		<xs:attribute ref="gco:nilReason"/>
+	</xs:complexType>
+</xs:schema>

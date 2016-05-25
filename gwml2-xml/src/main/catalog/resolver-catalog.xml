@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+
+    <uri name="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-nucleus.xsd"; 
+        uri="src/main/xsd/gwml2-nucleus.xsd"/>
+
+    <uri name="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-constituent.xsd"; 
+        uri="src/main/xsd/gwml2-constituent.xsd"/>
+	
+	<uri name="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-flow.xsd"; 
+        uri="src/main/xsd/gwml2-flow.xsd"/>
+	
+	<uri name="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-well.xsd"; 
+        uri="src/main/xsd/gwml2-well.xsd"/>
+	
+	<uri name="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-wellconstruction.xsd"; 
+        uri="src/main/xsd/gwml2-wellconstruction.xsd"/>
+	
+	<uri name="http://www.opengis.net/gwml2-nucleus/2.0"; 
+        uri="src/main/xsd/gwml2-nucleus.xsd"/>
+
+    <uri name="http://www.opengis.net/gwml2-constituent/2.0"; 
+        uri="src/main/xsd/gwml2-constituent.xsd"/>
+	
+	<uri name="http://www.opengis.net/gwml2-flow/2.0"; 
+        uri="src/main/xsd/gwml2-flow.xsd"/>
+	
+	<uri name="http://www.opengis.net/gwml2-well/2.0"; 
+        uri="src/main/xsd/gwml2-well.xsd"/>
+	
+	<uri name="http://www.opengis.net/gwml2-wellconstruction/2.0"; 
+        uri="src/main/xsd/gwml2-wellconstruction.xsd"/>
+
+	<system systemId="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-nucleus.xsd"; 
+        uri="src/main/xsd/gwml2-nucleus.xsd"/>
+	
+	<system systemId="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-constituent.xsd"; 
+        uri="src/main/xsd/gwml2-constituent.xsd"/>
+	
+	<system systemId="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-flow.xsd"; 
+        uri="src/main/xsd/gwml2-flow.xsd"/>
+	
+	<system systemId="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-well.xsd"; 
+        uri="src/main/xsd/gwml2-well.xsd"/>
+	
+	<system systemId="http://ngwd-bdnes.cits.nrcan.gc.ca/service/gwml/schemas/gwml2-wellconstruction.xsd"; 
+        uri="src/main/xsd/gwml2-wellconstruction.xsd"/>
+		
+</catalog>

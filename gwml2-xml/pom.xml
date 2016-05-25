@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>info.smart-project</groupId>
+  <artifactId>gwml2-demo1-xml</artifactId>
+  <version>0.0.5-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>OGC GWML2 Test Schema from GW2IE BoyanBrodaric - 29-09-2014 11:13:00 UTC</name>
+  
+  <properties>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+	
+  <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xmlbeans-maven-plugin</artifactId>
+		<version>2.3.3</version>
+		<executions>
+			<execution>
+				<id>main</id>
+				<goals>
+					<goal>xmlbeans</goal>
+				</goals>
+			</execution>
+		</executions>
+		
+            <configuration>
+				<schemaDirectory>src/main/xsd</schemaDirectory>
+				<sourceSchemas>
+					<sourceSchema>gwml2.xsd</sourceSchema>
+					<!-- <sourceSchema>gwml2-nucleus.xsd</sourceSchema>
+					<sourceSchema>gwml2-constituent.xsd</sourceSchema>
+					<sourceSchema>gwml2-flow.xsd</sourceSchema>
+					<sourceSchema>gwml2-well.xsd</sourceSchema>
+					<sourceSchema>gwml2-wellconstruction.xsd</sourceSchema>-->
+				</sourceSchemas>
+				<download>true</download>
+				
+            </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+			<version>2.6.0</version>
+        </dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-ogc-schema</artifactId>
+			<version>1.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-xml-xlink-v110</artifactId>
+			<version>1.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-xml-ows-v110</artifactId>
+			<version>1.1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-xml-gml-v321</artifactId>
+			<version>1.1.5</version>
+		</dependency>
+    </dependencies>
+</project>
