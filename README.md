@@ -24,3 +24,16 @@ Version control of these master X3D DTD and Schema assets is maintained at
 https://sourceforge.net/p/x3d/code/HEAD/tree/www.web3d.org/specifications
 
 See the changelog files or subversion archives for detailed records of DTD and Schema updates. Contained assets are released following review and approval by Web3D Consortium members and the X3D Working Group.
+
+---
+
+```xml
+<repository>
+  <id>bintray-allixender-maven2</id>
+  <name>bintray</name>
+  <url>http://dl.bintray.com/allixender/maven2</url>
+  <snapshots>
+    <enabled>false</enabled>
+  </snapshots>
+</repository>
+```
